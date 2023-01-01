@@ -96,7 +96,7 @@
                                 <h1>{{ $users->count() }}</h1>
                             </div>
                             <div class="card-footer">
-                                <a href="dashboard/customers.html" class="text-decoration-none">View Details >></a
+                                <a href="/users" class="text-decoration-none">View Details >></a
                     >
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                   <h1>{{ $posts->count() }}</h1>
                 </div>
                 <div class="card-footer">
-                  <a href="dashboard/vehicle.html" class="text-decoration-none"
+                  <a href="/posts" class="text-decoration-none"
                     >View Details >></a
                   >
                 </div>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="card-footer">
                   <a
-                    href="dashboard/categories.html"
+                    href="/bookings"
                     class="text-decoration-none"
                     >View Details >></a
                   >
