@@ -44,7 +44,13 @@ Route::post('/bookings', [BookingController::class, 'store']);
 
 
 // ////////////////////////////////////////////////////////////////
-Route::get('admin/dashboard',[UsersController::class, 'dashboard'])->middleware('auth');
+Route::get('admin/dashboard',[UsersController::class, 'dashboard'])->middleware('auth')->middleware('isAdmin');
+
+Route::get('/users',[UsersController::class, 'admin_users'])->middleware('auth')->middleware('isAdmin');
+
+Route::get('/posts',[UsersController::class, 'admin_posts'])->middleware('auth')->middleware('isAdmin');
+
+Route::get('/bookings',[UsersController::class, 'admin_bookings'])->middleware('auth')->middleware('isAdmin');
 // ////////////////////////////////////////////////////////////////
 
 

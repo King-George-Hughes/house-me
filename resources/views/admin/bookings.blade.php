@@ -42,7 +42,7 @@
                 <div class="position-sticky pt-3 min-vh-100">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="admin/dashboard">
+                            <a class="nav-link active text-white-50" aria-current="page" href="admin/dashboard">
                                 <span data-feather="home"></span>
                                 <i class="fas fa-tachometer-alt ms-3"></i> Dashboard
                             </a>
@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white-50" aria-current="page" href="/bookings">
+                            <a class="nav-link active text-white" aria-current="page" href="/bookings">
                                 <span data-feather="home"></span>
                                 <i class="fas fa-book ms-3"></i> Bookings
                             </a>
@@ -71,7 +71,7 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2"><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+                    <h1 class="h2"><i class="fas fa-tachometer-alt"></i> All Bookings</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -89,69 +89,35 @@
                 </div>
 
                 <div class="container-fluid row">
-                    <div class="col-lg-4">
-                        <div class="card mt-3 m-2">
-                            <h6 class="card-header bg-primary text-white">Users</h6>
-                            <div class="card-body">
-                                <h1>{{ $users->count() }}</h1>
-                            </div>
-                            <div class="card-footer">
-                                <a href="dashboard/customers.html" class="text-decoration-none">View Details >></a
-                    >
-                    </div>
-                </div>
-                </div>
-
-            <div class="col-lg-4">
-              <div class="card mt-3 m-2">
-                <h6 class="card-header bg-success text-white">Posts</h6>
-                <div class="card-body">
-                  <h1>{{ $posts->count() }}</h1>
-                </div>
-                <div class="card-footer">
-                  <a href="dashboard/vehicle.html" class="text-decoration-none"
-                    >View Details >></a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="card mt-3 m-2">
-                <h6 class="card-header bg-warning text-white">Bookings</h6>
-                <div class="card-body">
-                  <h1>{{ $bookings->count() }}</h1>
-                </div>
-                <div class="card-footer">
-                  <a
-                    href="dashboard/categories.html"
-                    class="text-decoration-none"
-                    >View Details >></a
-                  >
-                </div>
-              </div>
-            </div>
 
             <div class="col-lg-12">
-              <div class="card mt-3 m-2">
-                <h6 class="card-header bg-dark text-white">List of All Users</h6>
+              <div class="card mt-3 m-2 overflow-auto">
+                <h6 class="card-header bg-dark text-white">List of All Bookings</h6>
                 <div class="card-body">
                     <table class="table">
                         <tr>
                             <th>#</th>
+                            <th>Booking Id</th>
+                            <th>Post Id</th>
+                            <th>User Id</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Contact</th>
-                            <th>Created</th>
+                            <th>Comment</th>
+                            <th>Created At</th>
                         </tr>
                         <?php $number = 1; ?>
-                        @foreach($users as $user)
+                        @foreach($bookings as $booking)
                             <tr>
                                 <td>{{ $number++ }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->contact }}</td>
-                                <td>{{ $user->created_at }}</td>
+                                <td>{{ $booking->id }}</td>
+                                <td>{{ $booking->listing_id }}</td>
+                                <td>{{ $booking->user_id }}</td>
+                                <td>{{ $booking->name }}</td>
+                                <td>{{ $booking->email }}</td>
+                                <td>{{ $booking->contact }}</td>
+                                <td>{{ $booking->comment }}</td>
+                                <td>{{ $booking->created_at }}</td>
                             </tr>
                         @endforeach
                     </table>

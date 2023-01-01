@@ -42,6 +42,24 @@ class UsersController extends Controller
         return view('admin.dashboard', compact('users','posts','bookings'));
     }
 
+    public function admin_users()
+    {
+        $users = User::latest()->get();
+        return view('admin.users', compact('users'));
+    }
+
+    public function admin_posts()
+    {
+        $posts = Listing::all();
+        return view('admin.posts', compact('posts'));
+    }
+
+    public function admin_bookings()
+    {
+        $bookings = Booking::all();
+        return view('admin.bookings', compact('bookings'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
