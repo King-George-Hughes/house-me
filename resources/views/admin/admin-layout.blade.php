@@ -10,8 +10,7 @@
     ></script>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" />
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" /> --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
     <title>HouseMe</title>
   </head>
   <style>
@@ -22,9 +21,6 @@
     }
   </style>
   <body>
-    <!-- NAV BAR -->
-    @include('partials._navbar')
-    <!-- NAVBAR END -->
 
     <!-- MAIN AREA -->
     @yield('content')
@@ -32,8 +28,7 @@
 
     <script src="{{ asset('script/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('script/all.min.js') }}"></script>
-    {{-- <script src="{{ asset('script/bootstrap.bundle.min.js') }}"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ asset('script/bootstrap.bundle.min.js') }}"></script>
     <script>
       const year = document.querySelector("#year");
       year.textContent = new Date().getUTCFullYear();
