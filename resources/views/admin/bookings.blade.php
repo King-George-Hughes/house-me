@@ -6,7 +6,7 @@
 
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><i class="fas fa-user-alt ms-3"></i> Administrator</a
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="admin/dashboard"><i class="fas fa-user-alt ms-3"></i> Administrator</a
       >
       <button
         class="navbar-toggler position-absolute d-md-none collapsed"
