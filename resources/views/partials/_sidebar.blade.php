@@ -32,7 +32,7 @@
     </div>
   </div>
   <br />
- @if (auth()->user()->role == '1')
+ {{-- @if (auth()->user()->role == '1') --}}
  <div class="card">
    <div class="card-body">
      <div class="media">
@@ -42,7 +42,7 @@
      </div>
    </div>
  </div>
- @endif
+ {{-- @endif --}}
   <br />
   <div class="card mb-5">
     <div class="card-header bg-dark text-light">

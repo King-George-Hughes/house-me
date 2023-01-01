@@ -12,9 +12,9 @@
       &copy; HouseMe | 
       <span id="year"></span> 
       &trade; 
-      @if (auth()->user()->role == '1')
+      {{-- @if (auth()->user()->role == '1') --}}
         <a class="btn btn-primary ms-2" href="/create">Add Post</a>
-      @endif
+      {{-- @endif --}}
     </p>
 </footer>
 <!-- FOOTER END -->
