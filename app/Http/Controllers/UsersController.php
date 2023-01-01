@@ -36,9 +36,9 @@ class UsersController extends Controller
     // Admin Page
     public function dashboard()
     {
-        $users = User::lastest()->get();
+        $users = User::latest()->get();
         $posts = Listing::all();
-        $booking = Booking::all();
+        $bookings = Booking::all();
         return view('admin.dashboard', compact('users','posts','bookings'));
     }
 

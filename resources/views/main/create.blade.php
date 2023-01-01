@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('content')
-    {{-- @if (auth()->user()->role == '1') --}}
     <div class="container">
         <div class="row">
             <div class="col-lg-5 mx-auto mt-2 mt-sm-5">
@@ -108,5 +107,4 @@
             </div>
         </div>
     </div>
-    {{-- @endif --}}
 @endsection
