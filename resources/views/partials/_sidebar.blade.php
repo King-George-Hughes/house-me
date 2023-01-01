@@ -32,15 +32,17 @@
     </div>
   </div>
   <br />
-  <div class="card">
-    <div class="card-body">
-      <div class="media">
-        <h4 class="text-center">Add a Post</h4>
-        <a class="btn btn-primary w-100" href="/create">Add Post</a>
-        <p class="m-auto text-center mt-2"><span class="text-primary">Login</span> to add a post or <span class="text-warning">create an account</span> to get started!</p>
-      </div>
-    </div>
-  </div>
+ @if (auth()->user()->role == '1')
+ <div class="card">
+   <div class="card-body">
+     <div class="media">
+       <h4 class="text-center">Add a Post</h4>
+       <a class="btn btn-primary w-100" href="/create">Add Post</a>
+       <p class="m-auto text-center mt-2"><span class="text-primary">Login</span> to add a post or <span class="text-warning">create an account</span> to get started!</p>
+     </div>
+   </div>
+ </div>
+ @endif
   <br />
   <div class="card mb-5">
     <div class="card-header bg-dark text-light">

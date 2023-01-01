@@ -56,11 +56,13 @@
      </ul>
      @auth
      <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a href="/manage" class="nav-link text-primary"
-          ><i class="fas fa-edit mx-1"></i> Manage Posts</a
-        >
-      </li>
+        @if (auth()->user()->role == '1')
+          <li class="nav-item">
+            <a href="/manage" class="nav-link text-primary"
+              ><i class="fas fa-edit mx-1"></i> Manage Posts</a
+            >
+          </li>
+        @endif   
       <li class="nav-item">
         <form action="/logout" method="POST">
           @csrf

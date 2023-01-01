@@ -43,11 +43,18 @@ Route::post('/bookings', [BookingController::class, 'store']);
 // ////////////////////////// Bookings //////////////////////////////
 
 
+// ////////////////////////////////////////////////////////////////
+Route::get('admin/dashboard',[UsersController::class, 'dashboard'])->middleware('auth');
+// ////////////////////////////////////////////////////////////////
+
 
 //////////////////////////////////////////////////////////////
 
 // View Register page
 Route::get('/register', [UsersController::class,'create'])->middleware('guest');
+
+// View Register page
+Route::get('/register_2', [UsersController::class,'create_2'])->middleware('guest');
 
 // Create New User
 Route::post('/users', [UsersController::class,'store']);
@@ -62,6 +69,6 @@ Route::get('/login', [UsersController::class,'index'])->name('login')->middlewar
 Route::post('/users/authenticate', [UsersController::class,'show']);
 
 
-///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 // View Single Full page
 Route::get('/{listing}', [ListingController::class, 'show']);

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Booking;
+use App\Models\Listing;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -26,6 +28,19 @@ class UsersController extends Controller
     {
         return view('users.register');
     }
+    public function create_2()
+    {
+        return view('users.register_2');
+    }
+
+    // Admin Page
+    public function dashboard()
+    {
+        $users = User::lastest()->get();
+        $posts = Listing::all();
+        $booking = Booking::all();
+        return view('admin.dashboard', compact('users','posts','bookings'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -40,6 +55,7 @@ class UsersController extends Controller
             'name' => 'required | min:3',
             'email' => 'required | email | unique:users',
             'contact' => 'required | min:10 | max:10',
+            'role' => 'required',
             'password' => 'required | confirmed | min:6',
         ]);
 
@@ -69,7 +85,13 @@ class UsersController extends Controller
         if(auth()->attempt($formFields)){
             $request->session()->regenerate();
 
-            return redirect('/manage')->with('message', 'You are welcome');
+            if(auth()->user()->role == '1'){
+                return redirect('/manage')->with('message', 'You are welcome');
+            }elseif(auth()->user()->role == '2'){
+                return redirect('admin/dashboard')->with('message', 'You are welcome');
+            }else{
+                return redirect('/')->with('message', 'You are welcome');
+            }
         }
 
         return back()->withErrors([

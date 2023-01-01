@@ -4,11 +4,11 @@
     <!-- MAIN AREA -->
     <section class="container py-2 mt-sm-5">
       <div class="row">
-        <div class="col-lg-5 mx-auto mt-2 mt-sm-5">
+        <div class="col-sm-5 mx-auto mt-2 mt-sm-5">
           <div class="card">
             <div class="card-header">
-              <h4>Register As Owner (Land-Lord)</h4>
-              <span class="text-danger">Or Register as <a class="btn btn-warning" href="/register_2"><i class="fas fa-user me-2"></i>Student</a></span>
+              <h4>Register As Student</h4>
+              <span class="text-danger">Or Register as <a class="btn btn-warning" href="/register"><i class="fas fa-user me-2"></i>Owner (Land-Lord)</a></span>
             </div>
             <div class="card-body">
               <form action="/users" method="POST">
@@ -80,7 +80,7 @@
                 <input
                   type="text"
                   name="role"
-                  value="1"
+                  value="0"
                   hidden
                 />
 
