@@ -6,7 +6,7 @@
 
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><i class="fas fa-user-alt ms-3"></i> Administrator</a
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="dashboard"><i class="fas fa-user-alt ms-3"></i> Administrator</a
       >
       <button
         class="navbar-toggler position-absolute d-md-none collapsed"
@@ -42,7 +42,7 @@
                 <div class="position-sticky pt-3 min-vh-100">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="admin/dashboard">
+                            <a class="nav-link active text-white" aria-current="page" href="dashboard">
                                 <span data-feather="home"></span>
                                 <i class="fas fa-tachometer-alt ms-3"></i> Dashboard
                             </a>
